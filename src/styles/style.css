@@ -9,4 +9,43 @@ body{
     background-color:gray;
     color:white;
     font-family: 'TeyvatFont';
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+#header{
+    border:1px solid black;
+    text-align:center;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+#links{
+    border:1px solid black;
+}
+
+#home-container{
+    border:1px solid black;
+    display:flex;
+    flex-direction: row;
+    align-items:center;
+    justify-content:space-between;
+}
+
+#menu-container{
+    border:1px solid black;
+    padding-left:100px;
+    padding-right:100px;
+    
+}
+
+.food-container{
+    border:1px solid black;
+    border-radius: 16px;
+}
+
+#contact-container{
+
 }
