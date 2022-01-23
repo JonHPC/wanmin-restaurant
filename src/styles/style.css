@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'TeyvatFont';
+    src: url('./zh-cn.ttf') format('truetype');
+    font-weight:600;
+    font-style: normal;
+}
+
+body{
+    background-color:gray;
+    color:white;
+    font-family: 'TeyvatFont';
+}
