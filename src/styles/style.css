@@ -12,18 +12,41 @@ body{
     display:flex;
     flex-direction:column;
     align-items:center;
+    margin: 0px;
 }
 
 #header{
-    border:1px solid black;
-    text-align:center;
     display:flex;
-    flex-direction:column;
+    flex-direction:row;
+    justify-content: space-between;
     align-items:center;
+    width:100%;
+    background-color: rgb(150, 40, 40);
+}
+
+#wanmin{
+    padding-left: 32px;
 }
 
 #links{
-    border:1px solid black;
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap:32px;
+    padding-right:32px;
+}
+
+#home-button:hover{
+    transform: scale(1.2);
+}
+
+
+#menu-button:hover{
+    transform: scale(1.2);
+}
+
+#contact-button:hover{
+    transform: scale(1.2);
 }
 
 #home-container{
@@ -32,10 +55,11 @@ body{
     flex-direction: row;
     align-items:center;
     justify-content:space-between;
+    padding-left: 100px;
+    padding-right: 100px;
 }
 
 #menu-container{
-    border:1px solid black;
     padding-left:100px;
     padding-right:100px;
     
@@ -44,8 +68,75 @@ body{
 .food-container{
     border:1px solid black;
     border-radius: 16px;
+    display:grid;
+    grid-template-columns: 4fr 0.5fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 3fr 1fr 1fr;
+    height: 256px;
+    width: 768px;
+    padding: 16px;
+}
+
+.food-image{
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    padding-left: 32px;
+}
+
+.food-name{
+    grid-column-start: 2;
+    grid-column-end: 6;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.food-text{
+    grid-column-start: 2;
+    grid-column-end: 6;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+.food-currency{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end: 4;
+}
+
+.food-price{
+    grid-column-start: 3;
+    grid-column-end: 5;
+    grid-row-start: 3;
+    grid-row-end: 4;
+}
+
+.food-rarity{
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 4;
+    grid-row-end: 5;
+}
+
+.one-star{
+    background-color:rgb(185, 185, 185);
+}
+
+.two-star{
+    background-color: rgb(133, 180, 133);
+}
+
+.three-star{
+    background-color: rgb(121, 176, 238);
 }
 
 #contact-container{
 
+}
+
+#footer{
+    text-align: center;
+    background-color: rgb(150, 40, 40);
+    width:100%;
 }

@@ -39,6 +39,7 @@ function menuDiv() {
         {
             "id": 0,
             "name": "Grilled Tiger Fish",
+            "text": "A fish kebab grilled over an open flame. The fish is a fresh catch stright from the harbor, lightly picked and swifty grilled.",
             "img": grilledTigerFishImage,
             "currency": moraImage,
             "price": "1,250",
@@ -47,6 +48,7 @@ function menuDiv() {
         {
             "id": 1,
             "name": "Rice Buns",
+            "text": "Soft and fluffy food. The rice and horsetail have been ground into flour and kneaded into dough before being put in a steaming basket.",
             "img": riceBunsImage,
             "currency": moraImage,
             "price": "1,250",
@@ -55,6 +57,7 @@ function menuDiv() {
         {
             "id": 2,
             "name": "Jueyun Chili Chicken",
+            "text": "The finesse technique used in mixing the dish retained the freshness of the delightful juice contained within the chicken.",
             "img": jueyunChiliChickenImage,
             "currency": moraImage,
             "price": "2,500",
@@ -63,6 +66,7 @@ function menuDiv() {
         {
             "id": 3,
             "name": "Crystal Shrimp",
+            "text": "The stuffing is taken from whole fresh shrimp, and the glistening quality of the flour can be guessed at from the translucence of the outer skin.",
             "img": crystalShrimpImage,
             "currency": moraImage,
             "price": "2,500",
@@ -71,6 +75,7 @@ function menuDiv() {
         {
             "id": 4,
             "name": "Mint Salad",
+            "text": "A fragrant salad dish. Finely chopped Jueyun Chilis blended with a sauce and mixed with Mint leaves.",
             "img": mintSaladImage,
             "currency": moraImage,
             "price": "2,500",
@@ -79,6 +84,7 @@ function menuDiv() {
         {
             "id": 5,
             "name": "Crab Roe Tofu",
+            "text": "A dish with a tender mouthfeel. Crab roe is stir-fried till the oil within oozes out before being added to boiled tofu and accented with broth.",
             "img": crabRoeTofuImage,
             "currency": moraImage,
             "price": "2,500",
@@ -87,6 +93,7 @@ function menuDiv() {
         {
             "id":6,
             "name": "Squirrel Fish",
+            "text": "Deboned fish with crisscross cuts on the skin. Coated in flour and deep-fried to a golden-brown color, then served with ketchup drizzled on top.",
             "img": squirrelFishImage,
             "currency": moraImage,
             "price": "5,000",
@@ -95,6 +102,7 @@ function menuDiv() {
         {
             "id": 7,
             "name": "Universal Peace",
+            "text": "A colorful staple dish that maintains a perfect balance between soft and fragrant rice mixed with all kinds of carefully selected sweet ingredients.",
             "img": universalPeaceImage,
             "currency": moraImage,
             "price": "5,000",
@@ -103,6 +111,7 @@ function menuDiv() {
         {
             "id": 8,
             "name": "Minty Meat Rolls",
+            "text": "The marinated meat has been thinly sliced and rolled into mint leaves, before being brushed with a sauce blend containing Jueyun Chilis.",
             "img": mintyMeatRollsImage,
             "currency": moraImage,
             "price": "5,000",
@@ -111,6 +120,7 @@ function menuDiv() {
         {
             "id": 9,
             "name": "Dragon Beard Noodles",
+            "text": "Noodles that are as slender as the hairs on a dragon's beard. The green onion is fried in a wok before the soup and condiments are added.",
             "img": dragonBeardNoodlesImage,
             "currency": moraImage,
             "price": "5,000",
@@ -128,33 +138,47 @@ function menuDiv() {
         const food = document.createElement("img");
         food.src = foodArray[i].img;
         food.id = `${foodArray[i].name}`;
-
-        //append each food to the foodContainer
+        food.className = "food-image";
         foodContainer.appendChild(food);
 
         //create text for the name of each food
-        const name = document.createElement("h5");
+        const name = document.createElement("h2");
         name.textContent = foodArray[i].name;
-
-        //append each food name to the foodContainer
+        name.className = "food-name";
         foodContainer.appendChild(name);
+
+        //create a text description for each foor
+        const text = document.createElement("p");
+        text.textContent = foodArray[i].text;
+        text.className = "food-text";
+        foodContainer.appendChild(text);
 
         //create a currency image for each foodContainer
         const currency = document.createElement("img");
         currency.src = foodArray[i].currency;
+        currency.className = "food-currency";
         foodContainer.appendChild(currency);
 
         //create text for the price of each food
         const price = document.createElement("p");
         price.textContent = foodArray[i].price;
+        price.className = "food-price";
         foodContainer.appendChild(price);
 
         //create an image for the rarity of each food
         const rarity = document.createElement("img");
         rarity.src = foodArray[i].rarity;
+        rarity.className = "food-rarity";
         foodContainer.appendChild(rarity);
 
-
+        //assign the rarity class to the foodContainer based on the value
+        if(foodArray[i].rarity === oneStarImage){
+            foodContainer.classList.add("one-star");
+        } else if (foodArray[i].rarity === twoStarImage){
+            foodContainer.classList.add("two-star");
+        } else if(foodArray[i].rarity === threeStarImage){
+            foodContainer.classList.add("three-star");
+        }
 
         //append the foodContainer to the MenuContainer
         menuContainer.appendChild(foodContainer);

@@ -7,12 +7,13 @@ function headerDiv() {
     header.id = "header";
 
     const wanmin= document.createElement("h1");
+    wanmin.id = "wanmin";
     wanmin.textContent = "Wanmin Restaurant";
     header.appendChild(wanmin);
 
-    const subtext = document.createElement("h5");
+    /*const subtext = document.createElement("h5");
     subtext.textContent = "The best food in all of Teyvat!";
-    header.appendChild(subtext);
+    header.appendChild(subtext);*/
 
     const links = document.createElement("div");
     links.id = "links";
@@ -37,13 +38,30 @@ function headerDiv() {
     return header;
 }
 
+function footerDiv() {
+    const footer = document.createElement("div");
+    footer.id = "footer";
 
+    const disclaimer = document.createElement("p");
+    disclaimer.id = "disclaimer";
+    disclaimer.textContent = "All images and IP belong to MiHoYo. This website was created for practice.";
+    footer.appendChild(disclaimer);
+
+    const copyright = document.createElement("p");
+    copyright.id = "copyright";
+    copyright.textContent = "Created © 2022 Jonathan Chen"
+    footer.appendChild(copyright);
+
+    return footer;
+}
 
 
 function createWebsite() {
     const content = document.querySelector("body");
 
     content.insertBefore(headerDiv(), content.firstChild);
+
+    content.appendChild(footerDiv());
 }
 
 export default createWebsite;
