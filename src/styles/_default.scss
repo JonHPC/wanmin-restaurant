@@ -10,6 +10,7 @@ $header-footer-color:rgb(104, 25, 25);
 $one-star-color:rgb(185, 185, 185);
 $two-star-color:rgb(133, 180, 133);
 $three-star-color:rgb(121, 176, 238);
+$delay:0.2s;
 
 body {
 	background: $background-gradient;
@@ -105,7 +106,29 @@ body {
 	padding-right: 100px;
 }
 
-#guoba{
+#middle-container{
+	border-radius:16px;
+	position:relative;
+	animation-name: hours-fade-in;
+	animation-duration: 1.5s;
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+	justify-content: space-between;
+	gap: 32px;
+}
+
+#subtext{
+	font-style: italic;
+	text-align:center;
+}
+
+#home-wanmin{
+	border-radius: 16px;
+	box-shadow: 10px 5px 5px rgba(82, 40, 30, 0.548);
+}
+
+#guoba-container{
 	position: relative;
 	animation-name: guoba-fade-in;
 	animation-duration: 0.75s;
@@ -128,9 +151,17 @@ body {
 }
 
 #hours-container{
-	position:relative;
-	animation-name: hours-fade-in;
-	animation-duration: 1.5s;
+	border: 2px solid $header-footer-color;
+	border-radius:16px;
+	background-color:$two-star-color;
+	width: 300px;
+	height: 200px;
+	padding-top:16px;
+	box-shadow: 10px 5px 5px rgba(82, 40, 30, 0.548);
+}
+
+ul{
+	list-style-type: none;
 }
 
 @keyframes hours-fade-in{
@@ -140,7 +171,7 @@ body {
 
 }
 
-#xiangling{
+#xiangling-container{
 	position: relative;
 	animation-name: xiangling-fade-in;
 	animation-duration: 0.75s;
@@ -160,9 +191,63 @@ body {
 #menu-container {
 	padding-left: 100px;
 	padding-right: 100px;
+	padding-top: 32px;
+	padding-bottom: 32px;
+	display:grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: repeat(5, 1fr);
+	gap:16px;
 }
+
+@keyframes menu-fadein{
+	100%{opacity:1;};
+}
+
+#menu-container div{
+	animation: menu-fadein 0.5s forwards;
+}
+
+#menu-container div:nth-child(1){
+	animation-delay:$delay;
+}
+
+#menu-container div:nth-child(2){
+	animation-delay:$delay * 2;
+}
+
+#menu-container div:nth-child(3){
+	animation-delay:$delay * 3;
+}
+
+#menu-container div:nth-child(4){
+	animation-delay:$delay * 4;
+}
+
+#menu-container div:nth-child(5){
+	animation-delay:$delay * 5;
+}
+
+#menu-container div:nth-child(6){
+	animation-delay:$delay * 6;
+}
+
+#menu-container div:nth-child(7){
+	animation-delay:$delay * 7;
+}
+
+#menu-container div:nth-child(8){
+	animation-delay:$delay * 8;
+}
+
+#menu-container div:nth-child(9){
+	animation-delay:$delay * 9;
+}
+
+#menu-container div:nth-child(10){
+	animation-delay:$delay * 10;
+}
+
 .food-container {
-	border: 1px solid black;
 	border-radius: 16px;
 	display: grid;
 	grid-template-columns: 4fr 0.5fr 1fr 1fr 1fr;
@@ -170,7 +255,11 @@ body {
 	height: 256px;
 	width: 768px;
 	padding: 16px;
+	box-shadow: 10px 5px 5px rgba(82, 40, 30, 0.548);
+	opacity:0;
 }
+
+
 .food-image {
 	grid-column-start: 1;
 	grid-column-end: 2;
@@ -217,6 +306,100 @@ body {
 .three-star {
 	background-color: $three-star-color;
 }
+
+#contact-container{
+	display:grid;
+	grid-template-columns: 0.5fr 1fr 1fr 4fr 1fr 1fr 0.5fr;
+	grid-template-rows: 0.5fr 1fr 1fr 1fr 1fr 0.5fr;
+}
+
+#pepper{
+	grid-column-start: 2;
+	grid-column-end: 3;
+	grid-row-start: 3;
+	grid-row-end: 4;
+	animation: pepper-anim 2s linear infinite;
+}
+
+@keyframes pepper-anim{
+	0%{transform:rotate(0deg) translateY(0px); }
+	20%{transform:rotate(170deg) translateY(0px);}
+	30%{transform:rotate(170deg) translateY(-30px);}
+	35%{transform:rotate(170deg) translateY(10px);}
+	40%{transform:rotate(170deg) translateY(-30px);}
+	45%{transform:rotate(170deg) translateY(10px);}
+	50%{transform:rotate(170deg) translateY(0px);}
+	70%{transform:rotate(0deg) translateY(0px);}
+}
+
+#fish{
+	grid-column-start: 2;
+	grid-column-end: 3;
+	grid-row-start: 4;
+	grid-row-end: 5;
+	animation: fish-anim 0.5s linear infinite alternate;
+}
+
+@keyframes fish-anim{
+	from{transform:rotate(-5deg) translateX(-30px);}
+	to{transform:rotate(5deg) translateX(-10px);}
+}
+
+#map-container{
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+	animation-name: map-fadein;
+	animation-duration: 1.5s;
+	padding-top:50px;
+	padding-bottom:100px;
+	grid-column-start: 4;
+	grid-column-end: 5;
+	grid-row-start: 1;
+	grid-row-end: 6;
+	border:2px solid $header-footer-color;
+	background-color:$two-star-color;
+	border-radius:24px;
+	margin-top:32px;
+	box-shadow: 10px 5px 5px rgba(82, 40, 30, 0.548);
+}
+
+@keyframes map-fadein{
+	from {opacity:0;}
+	to{opacity: 1;}
+}
+
+#wanmin-map{
+	border-radius:16px;
+	box-shadow: 5px 3px 3px rgba(30, 92, 35, 0.548);
+}
+
+#jueyun{
+	grid-column-start: 6;
+	grid-column-end: 7;
+	grid-row-start: 3;
+	grid-row-end: 4;
+	animation: jueyun-anim 0.3s linear infinite alternate;
+}
+
+@keyframes jueyun-anim{
+	from{transform:rotate(0deg);}
+	to{transform:rotate(-10deg);}
+}
+
+#chibi-xiangling{
+	grid-column-start: 6;
+	grid-column-end: 7;
+	grid-row-start: 4;
+	grid-row-end: 5;
+	animation: chibi-xiangling-anim 0.5s linear infinite alternate;
+}
+
+@keyframes chibi-xiangling-anim{
+	from{transform:scale(1);}
+	to{transform:scale(1.1);}
+}
+
 #footer {
 	text-align: center;
 	background-color: $header-footer-color;

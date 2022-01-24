@@ -1,9 +1,23 @@
 import xianglingImage from "./images/character_xiangling_portrait.png";
 import guobaImage from "./images/npc_guoba_portrait.png";
+import wanminImage from "./images/wanmin_restaurant.jpeg";
 
 function homeDiv() {
     const homeContainer = document.createElement("div");
     homeContainer.id = "home-container";
+
+    const middleContainer = document.createElement("div");
+    middleContainer.id = "middle-container";
+
+    const subtext = document.createElement("h3");
+    subtext.textContent = "Come enjoy the best food in all of Liyue!"
+    subtext.id = "subtext";
+    middleContainer.appendChild(subtext);
+
+    const wanmin = document.createElement("img");
+    wanmin.src = wanminImage;
+    wanmin.id = "home-wanmin";
+    middleContainer.appendChild(wanmin);
 
     const guobaContainer = document.createElement("div");
     guobaContainer.id = "guoba-container";
@@ -12,7 +26,6 @@ function homeDiv() {
     guoba.src = guobaImage;
     guoba.id = "guoba";
     guobaContainer.appendChild(guoba);
-
 
     const hoursContainer = document.createElement("div");
     hoursContainer.id = "hours-container";
@@ -50,6 +63,7 @@ function homeDiv() {
     
     hoursContainer.appendChild(hoursList);
 
+    middleContainer.appendChild(hoursContainer);
 
     const xianglingContainer = document.createElement("div");
     xianglingContainer.id = "xiangling-container";
@@ -61,7 +75,7 @@ function homeDiv() {
 
 
     homeContainer.appendChild(guobaContainer);
-    homeContainer.appendChild(hoursContainer);
+    homeContainer.appendChild(middleContainer);
     homeContainer.appendChild(xianglingContainer);
 
     return homeContainer;

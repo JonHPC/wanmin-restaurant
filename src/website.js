@@ -34,6 +34,7 @@ function headerDiv() {
     return header;
 }
 
+
 function footerDiv() {
     const footer = document.createElement("div");
     footer.id = "footer";

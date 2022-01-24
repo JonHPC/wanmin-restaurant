@@ -23,20 +23,5 @@ contactButton.addEventListener('click', () =>{
     contactPage();
 });
 
-/*
-homeButton.addEventListener('mouseover', addHoverClass);
-menuButton.addEventListener('mouseover', addHoverClass);
-contactButton.addEventListener('mouseover', addHoverClass);
 
-function addHoverClass(){
-    target.classList.add('hover');
-}
-
-homeButton.addEventListener('mouseout', removeHoverClass);
-menuButton.addEventListener('mouseout', removeHoverClass);
-contactButton.addEventListener('mouseout', removeHoverClass);
-
-function removeHoverClass(){
-    target.classList.remove('hover');
-}*/
 
