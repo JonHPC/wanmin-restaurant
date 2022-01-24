@@ -59,12 +59,14 @@ function homeDiv() {
     xiangling.id = "xiangling";
     xianglingContainer.appendChild(xiangling);
 
+
     homeContainer.appendChild(guobaContainer);
     homeContainer.appendChild(hoursContainer);
     homeContainer.appendChild(xianglingContainer);
 
     return homeContainer;
 }
+
 
 function homePage() {
     const content = document.querySelector("#content");

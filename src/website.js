@@ -11,10 +11,6 @@ function headerDiv() {
     wanmin.textContent = "Wanmin Restaurant";
     header.appendChild(wanmin);
 
-    /*const subtext = document.createElement("h5");
-    subtext.textContent = "The best food in all of Teyvat!";
-    header.appendChild(subtext);*/
-
     const links = document.createElement("div");
     links.id = "links";
 

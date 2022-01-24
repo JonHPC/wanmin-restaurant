@@ -1,0 +1,231 @@
+@font-face {
+	font-family: 'TeyvatFont';
+	src: url('./zh-cn.ttf') format('truetype');
+	font-weight: 600;
+	font-style: normal;
+}
+
+$background-gradient:linear-gradient(0deg, rgba(187,138,55,1) 0%, rgba(208,117,62,1) 48%, rgba(187,41,32,1) 100%);
+$header-footer-color:rgb(104, 25, 25);
+$one-star-color:rgb(185, 185, 185);
+$two-star-color:rgb(133, 180, 133);
+$three-star-color:rgb(121, 176, 238);
+
+body {
+	background: $background-gradient;
+	color: white;
+	font-family: 'TeyvatFont';
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 0px;
+}
+#header {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	background-color: $header-footer-color;
+	animation-name: header-fade-in;
+	animation-duration: 1.5s;
+}
+
+@keyframes header-fade-in{
+	from {opacity:0;}
+	to {opacity: 1;}
+}
+#wanmin {
+	padding-left: 32px;
+}
+#links {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	gap: 32px;
+	padding-right: 32px;
+}
+
+#home-button{
+	animation-name: bounce;
+	animation-duration: 1.5s;
+	animation-timing-function: ease;
+}
+
+#menu-button{
+	animation-name: bounce;
+	animation-duration: 1.5s;
+	animation-timing-function: ease;
+}
+
+#contact-button{
+	animation-name: bounce;
+	animation-duration: 1.5s;
+	animation-timing-function: ease;
+}
+
+@keyframes bounce{
+		0%   { transform: scale(1,1)      translateY(0); }
+        10%  { transform: scale(1.1,.9)   translateY(0); }
+        30%  { transform: scale(.9,1.1)   translateY(-30px); }
+        50%  { transform: scale(1.05,.95) translateY(0); }
+        57%  { transform: scale(1,1)      translateY(-7px); }
+        64%  { transform: scale(1,1)      translateY(0); }
+        100% { transform: scale(1,1)      translateY(0); }
+}
+
+#home-button {
+	&:hover {
+		animation: wobble 0.5s linear infinite alternate;
+	}
+}
+#menu-button {
+	&:hover {
+		animation: wobble 0.5s linear infinite alternate;
+	}
+}
+#contact-button {
+	&:hover {
+		animation: wobble 0.5s linear infinite alternate;
+	}
+}
+
+@keyframes wobble {
+	from{transform:rotate(-5deg) scale(1);}
+	50%{transform: scale(1.2);}
+	to{transform:rotate(5deg) scale(1);}
+}
+
+#home-container {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	padding-left: 100px;
+	padding-right: 100px;
+}
+
+#guoba{
+	position: relative;
+	animation-name: guoba-fade-in;
+	animation-duration: 0.75s;
+}
+
+@keyframes guoba-fade-in{
+	from {opacity:0; right:200px;}
+	to {opacity: 1; right:0px;}
+}
+
+#guoba{
+	&:hover{
+		animation: guoba-xiangling-wobble 0.3s linear infinite alternate;
+	}
+}
+
+@keyframes guoba-xiangling-wobble {
+	from{transform:rotate(0deg);}
+	to{transform:rotate(-5deg);}
+}
+
+#hours-container{
+	position:relative;
+	animation-name: hours-fade-in;
+	animation-duration: 1.5s;
+}
+
+@keyframes hours-fade-in{
+	from {opacity: 0;}
+	66%{ opacity: 0; bottom: 100px;}
+	to {opacity: 1; bottom: 0px;}
+
+}
+
+#xiangling{
+	position: relative;
+	animation-name: xiangling-fade-in;
+	animation-duration: 0.75s;
+}
+
+@keyframes xiangling-fade-in{
+	from {opacity:0; left:200px;}
+	to {opacity: 1; left: 0px;}
+}
+
+#xiangling{
+	&:hover{
+		animation: guoba-xiangling-wobble 0.5s linear infinite alternate;
+	}
+}
+
+#menu-container {
+	padding-left: 100px;
+	padding-right: 100px;
+}
+.food-container {
+	border: 1px solid black;
+	border-radius: 16px;
+	display: grid;
+	grid-template-columns: 4fr 0.5fr 1fr 1fr 1fr;
+	grid-template-rows: 1fr 3fr 1fr 1fr;
+	height: 256px;
+	width: 768px;
+	padding: 16px;
+}
+.food-image {
+	grid-column-start: 1;
+	grid-column-end: 2;
+	grid-row-start: 1;
+	grid-row-end: 3;
+	padding-left: 32px;
+}
+.food-name {
+	grid-column-start: 2;
+	grid-column-end: 6;
+	grid-row-start: 1;
+	grid-row-end: 2;
+}
+.food-text {
+	grid-column-start: 2;
+	grid-column-end: 6;
+	grid-row-start: 2;
+	grid-row-end: 3;
+}
+.food-currency {
+	grid-column-start: 2;
+	grid-column-end: 3;
+	grid-row-start: 3;
+	grid-row-end: 4;
+}
+.food-price {
+	grid-column-start: 3;
+	grid-column-end: 5;
+	grid-row-start: 3;
+	grid-row-end: 4;
+}
+.food-rarity {
+	grid-column-start: 2;
+	grid-column-end: 4;
+	grid-row-start: 4;
+	grid-row-end: 5;
+}
+.one-star {
+	background-color: $one-star-color;
+}
+.two-star {
+	background-color: $two-star-color;
+}
+.three-star {
+	background-color: $three-star-color;
+}
+#footer {
+	text-align: center;
+	background-color: $header-footer-color;
+	width: 100%;
+	animation-name: footer-fade-in;
+	animation-duration:1.5s;
+}
+
+@keyframes footer-fade-in{
+	from {opacity:0;}
+	to {opacity: 1;}
+}
